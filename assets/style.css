@@ -1,0 +1,130 @@
+body {
+	background: yellow;
+	display: grid;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 5fr 4fr;
+	grid-template-rows: 3fr 2fr;
+	grid-template-areas:
+		"sessions twitter"
+		"sponsors twitter";
+}
+
+#sessions {
+	background: #00579d;
+	background-image: url( images/skyline.svg );
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: white;
+	font-family: arial;
+	grid-area: sessions;
+	padding: 0;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+	#sessions::before {
+		background: url( images/bullets.svg );
+		background-repeat: repeat-x;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	#sessions .talk {
+		background: url( images/talks.svg );
+		background-size: 5em 4em;
+		background-repeat: no-repeat;
+		width: 1em;
+		height: 1em;
+		content: "";
+		display: block;
+		left: calc(50% - 0.5em);
+		position: absolute;
+		top: calc(50% - 0.5em);
+		font-size: 33em;
+		font-size: 65vh;
+	}
+
+#sponsors {
+	background: white;
+	grid-area: sponsors;
+	padding: 1rem;
+	overflow: hidden;
+	position: relative;
+}
+
+	#sponsors ul {
+		list-style-type: none;
+	}
+
+	#sponsors ul li {
+		background: white;
+		left: 100%;
+		margin-bottom: 3em;
+		padding: 2em;
+		position: absolute;
+		top: calc(50% - 8em);
+		opacity: 0;
+		width: 20em;
+		transition: left 400ms ease-in-out, opacity 300ms ease-in-out;
+	}
+
+	#sponsors ul li:before   {
+		border-bottom: 0.6rem solid #ccc;
+		display: block;
+		font-family: arial;
+		font-size: 2em;
+		font-weight: 700;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	#sponsors ul li.gold:before   {
+		content: "OR";
+		color: #ecb228;
+		border-color: #ecb228;
+	}
+
+	#sponsors ul li.silver:before {
+		content: "PLATA";
+		border-color: #d1d1d1;
+		color: #d1d1d1;
+	}
+
+	#sponsors ul li.bronze:before {
+		content: "BRONZE";
+		border-color: #eca477;
+		color: #eca477;
+	}
+
+	#sponsors ul li.visible {
+		left: calc(50% - 12em);
+		opacity: 1;
+	}
+
+	#sponsors ul li.hiding {
+		left: -15em;
+	}
+
+	#sponsors ul li img {
+		max-width: 100%;
+	}
+
+#twitter {
+	background: white;
+	grid-area: twitter;
+	overflow: scroll;
+}
+
+
