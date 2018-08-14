@@ -91,7 +91,7 @@ body {
 	}
 
 	#sponsors ul li.gold:before   {
-		content: "OR";
+		content: "ORO";
 		color: #ecb228;
 		border-color: #ecb228;
 	}
@@ -103,7 +103,7 @@ body {
 	}
 
 	#sponsors ul li.bronze:before {
-		content: "BRONZE";
+		content: "BRONCE";
 		border-color: #eca477;
 		color: #eca477;
 	}
