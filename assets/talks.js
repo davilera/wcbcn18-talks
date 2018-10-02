@@ -24,3 +24,32 @@ TALKS = {
 el = document.querySelector( '#sessions .talk' );
 el.style.backgroundPosition = TALKS[ room ][ talk ] || '0 0';
 
+document.addEventListener( 'keydown', ( event ) => {
+
+	el = document.querySelector( '#sessions .talk' );
+
+  const keyName = event.key;
+	switch ( keyName ) {
+		case 'ArrowDown':
+			talk = Math.min( talk + 1, TALKS[ room ].length );
+			el.style.backgroundPosition = TALKS[ room ][ talk ] || '0 0';
+			break;
+
+		case 'ArrowUp':
+			talk = Math.max( talk - 1, 0 );
+			el.style.backgroundPosition = TALKS[ room ][ talk ] || '0 0';
+			break;
+
+		case 'ArrowLeft':
+			room = 'paranimf';
+			el.style.backgroundPosition = TALKS[ room ][ talk ] || '0 0';
+			break;
+
+		case 'ArrowRight':
+			room = 'magna';
+			el.style.backgroundPosition = TALKS[ room ][ talk ] || '0 0';
+			break;
+	};
+	console.log( room, talk );
+
+});
